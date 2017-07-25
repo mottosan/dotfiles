@@ -1,0 +1,15 @@
+.swp
+.swo
+.*.swp
+.*.swo
+*.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+._*
+.byebug_history
+.agignore
+
+tags
+gems.tags
