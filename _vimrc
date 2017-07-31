@@ -15,6 +15,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rails'
 Plug 'croaky/vim-colors-github'
 Plug 'qpkorr/vim-bufkill'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 " }}}
 
@@ -112,6 +113,8 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
     autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
+	autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
+    autocmd FileType ruby setlocal commentstring=#\ %s
 augroup END
 " }}}
 
