@@ -217,7 +217,3 @@ set splitright " cursor moves to new split window
 map <C-c> :BD<cr> " delete buffer without closing split
 
 
-" source alias file
-if [ -f $HOME/.aliases ] then
-    source $HOME/.aliases
-fi
