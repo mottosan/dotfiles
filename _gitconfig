@@ -68,3 +68,6 @@
 	unstage = reset HEAD --
 
 # vim: syntax=gitconfig
+[user]
+	name = Amortya Ray
+	email = amortya.ray@gmail.com
