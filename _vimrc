@@ -1,7 +1,8 @@
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'janko-m/vim-test'
 Plug 'scrooloose/syntastic'
 Plug 'simnalamburt/vim-mundo'
@@ -137,6 +138,9 @@ let g:airline_left_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_sep = ''
+let g:airline_powerline_fonts = 1
+set t_Co=256
+let g:airline_theme = "papercolor"
 " }}}
 
 " fzf stuff {{{
