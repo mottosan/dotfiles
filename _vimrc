@@ -30,7 +30,6 @@ set termguicolors
 " Misc {{{
 set backspace=indent,eol,start
 let g:vimwiki_list = [{'path': '~/.wiki/'}]
-set clipboard=unnamed
 " }}}
 
 " Spaces & Tabs {{{
@@ -216,4 +215,7 @@ set splitbelow " cursor moves to new split window
 set splitright " cursor moves to new split window
 map <C-c> :BD<cr> " delete buffer without closing split
 
-
+" when in tmux don't use unnamed clipboard
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
