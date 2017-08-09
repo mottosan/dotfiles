@@ -11,6 +11,9 @@ alias:
 	ln -fs $(DOTFILES)/_aliases ${HOME}/.aliases
 git:
 	ln -fs $(DOTFILES)/_gitconfig ${HOME}/.gitconfig
+	ln -fs $(DOTFILES)/_gitconfig_shared ${HOME}/.gitconfig_shared
+	ln -fs $(DOTFILES)/_gitconfig_home ${HOME}/.gitconfig_home
+	ln -fs $(DOTFILES)/_gitconfig_work ${HOME}/.gitconfig_work
 	ln -fs $(DOTFILES)/_gitignore ${HOME}/.gitignore
 	ln -fs $(DOTFILES)/_git_template ${HOME}/.git_template
 backup:

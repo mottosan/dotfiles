@@ -1,5 +1,7 @@
 alias tmux='tmux -2'
 
+alias lls="ls -l `find . -maxdepth 1 -type l -print`"
+
 if [ -f ${HOME}/.alias_local ]; then
 	source ${HOME}/.alias_local
 fi

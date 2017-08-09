@@ -207,7 +207,7 @@ highlight ColorColumn ctermbg=gray
 set colorcolumn=80
 
 " other misc stuff
-set tags=tags;
+set tags=./tags;
 set splitbelow " cursor moves to new split window
 set splitright " cursor moves to new split window
 map <C-c> :BD<cr> " delete buffer without closing split
