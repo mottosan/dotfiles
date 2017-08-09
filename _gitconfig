@@ -1,9 +1,3 @@
 [include]
 	path = ${HOME}/.dotfiles/_gitconfig_shared
-
-[includeIf "gitdir:~/development/repos/"]
-    	path = ${HOME}/.dotfiles/_gitconfig_work
-
-[includeIf "gitdir:~/.dotfiles"]
-    	path = ${HOME}/.dotfiles/_gitconfig_home
-
+    	path = ${HOME}/.gitconfig_local
