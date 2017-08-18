@@ -72,7 +72,7 @@ nnoremap gV `[v`]
 " }}}
 
 " Leader Shortcuts {{{
-let mapleader=","
+let mapleader=" "
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
 nnoremap <leader>h :A<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
@@ -89,6 +89,7 @@ nnoremap <leader>d :Make!
 nnoremap <leader>r :TestFile<CR>
 nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y "+y
+noremap <leader>/ :Commentary<cr>
 " }}}
 
 " Syntastic {{{
@@ -110,7 +111,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
     autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
-	autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
+    autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
     autocmd FileType ruby setlocal commentstring=#\ %s
 augroup END
 " }}}
