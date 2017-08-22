@@ -18,6 +18,7 @@ Plug 'croaky/vim-colors-github'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
+Plug 'simnalamburt/vim-mundo'
 call plug#end()
 " }}}
 
@@ -215,6 +216,8 @@ set tags=./tags;
 set splitbelow " cursor moves to new split window
 set splitright " cursor moves to new split window
 map <C-c> :BD<cr> " delete buffer without closing split
+
+nnoremap <Leader>u :MundoToggle<CR>
 
 " when in tmux don't use unnamed clipboard
 if $TMUX == ''
