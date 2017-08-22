@@ -112,6 +112,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
     autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
+    autocmd BufEnter *.js setlocal tabstop=2 shiftwidth=2
     autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
     autocmd FileType ruby setlocal commentstring=#\ %s
     autocmd Filetype html setlocal ts=2 sw=2 expandtab
