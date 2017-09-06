@@ -91,6 +91,9 @@ nnoremap <leader>r :TestFile<CR>
 nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y "+y
 noremap <leader>/ :Commentary<cr>
+
+" clear search highlight
+nmap <esc><esc> :set hlsearch!<CR>
 " }}}
 
 " Syntastic {{{
