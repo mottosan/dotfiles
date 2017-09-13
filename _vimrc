@@ -7,6 +7,7 @@ Plug 'janko-m/vim-test'
 Plug 'scrooloose/syntastic'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -91,9 +92,7 @@ nnoremap <leader>r :TestFile<CR>
 nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y "+y
 noremap <leader>/ :Commentary<cr>
-
-" clear search highlight
-nmap <esc><esc> :set hlsearch!<CR>
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 " }}}
 
 " Syntastic {{{
