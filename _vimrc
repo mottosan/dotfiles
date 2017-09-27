@@ -20,7 +20,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
 Plug 'simnalamburt/vim-mundo'
-Plug 'mhinz/vim-startify'
 call plug#end()
 " }}}
 
