@@ -20,7 +20,9 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
 Plug 'simnalamburt/vim-mundo'
-Plug 'mhinz/vim-startify'
+Plug 'isRuslan/vim-es6'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mileszs/ack.vim'
 call plug#end()
 " }}}
 
@@ -116,6 +118,7 @@ augroup configgroup
     autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
     autocmd BufEnter *.js setlocal tabstop=2 shiftwidth=2
+    autocmd BufEnter *.erb setlocal tabstop=2 shiftwidth=2
     autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
     autocmd FileType ruby setlocal commentstring=#\ %s
     autocmd Filetype html setlocal ts=2 sw=2 expandtab
@@ -226,4 +229,9 @@ nnoremap <Leader>u :MundoToggle<CR>
 " when in tmux don't use unnamed clipboard
 if $TMUX == ''
   set clipboard+=unnamed
+endif
+
+" if ag is installed use ag instead of ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
 endif
