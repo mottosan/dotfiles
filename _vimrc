@@ -23,6 +23,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'isRuslan/vim-es6'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-rhubarb'
 call plug#end()
 " }}}
 
@@ -223,6 +224,9 @@ set tags=./tags;
 set splitbelow " cursor moves to new split window
 set splitright " cursor moves to new split window
 map <C-c> :BD<cr> " delete buffer without closing split
+nnoremap <leader>v :vnew<CR>
+nnoremap <leader>s :new<CR>
+
 
 nnoremap <Leader>u :MundoToggle<CR>
 
