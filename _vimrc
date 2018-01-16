@@ -24,6 +24,8 @@ Plug 'isRuslan/vim-es6'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-rhubarb'
+Plug 'godlygeek/Tabular'
+Plug 'tpope/vim-surround'
 call plug#end()
 " }}}
 
@@ -101,7 +103,7 @@ nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 " Syntastic {{{
 let g:syntastic_python_flake8_args='--ignore=E501'
-let g:syntastic_ignore_files = ['.java$']
+let g:syntastic_ignore_files = ['.java$', '.scss$']
 let g:syntastic_python_python_exec = 'python3'
 " }}}
 
