@@ -26,6 +26,7 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'godlygeek/Tabular'
 Plug 'tpope/vim-surround'
+Plug 'posva/vim-vue'
 call plug#end()
 " }}}
 
