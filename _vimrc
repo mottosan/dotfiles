@@ -26,7 +26,9 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'godlygeek/Tabular'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'posva/vim-vue'
+Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 " }}}
 
