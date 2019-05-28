@@ -29,6 +29,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'posva/vim-vue'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 call plug#end()
 " }}}
 
@@ -231,7 +235,8 @@ set splitright " cursor moves to new split window
 map <C-c> :BD<cr> " delete buffer without closing split
 nnoremap <leader>v :vnew<CR>
 nnoremap <leader>s :new<CR>
-
+nnoremap <TAB>   :bnext<CR>
+nnoremap <S-TAB> :bprev<CR>
 
 nnoremap <Leader>u :MundoToggle<CR>
 
@@ -244,3 +249,9 @@ endif
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+" vim-jsx
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
