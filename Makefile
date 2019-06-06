@@ -1,5 +1,16 @@
 DOTFILES := $(shell pwd)
-all: backup shell tmux vim git alias
+dotfiles:
+	backup shell tmux vim git alias
+all: 
+	brew plug zsh silversearcher backup shell tmux vim git alias
+brew: 
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+plug:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+zsh:
+	brew install zsh
+silversearcher: 
+	brew install the_silver_searcher
 
 shell:
 	ln -fs $(DOTFILES)/_zshrc ${HOME}/.zshrc
