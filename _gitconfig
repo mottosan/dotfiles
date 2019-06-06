@@ -1,7 +1,5 @@
 [include]
 	path = .gitconfig_shared
-[includeIf "gitdir:~/development/repos/"]
-	path = ~/.gitconfig_work
 [includeIf "gitdir:~/Code/"]
 	path = ~/.gitconfig_home
 [includeIf "gitdir:~/.dotfiles/.git"]
