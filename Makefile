@@ -1,7 +1,7 @@
 DOTFILES := $(shell pwd)
-dotfiles:
+all:
 	backup shell tmux vim git alias
-all: 
+set: 
 	brew plug zsh silversearcher backup shell tmux vim git alias
 brew: 
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -16,6 +16,8 @@ shell:
 	ln -fs $(DOTFILES)/_zshrc ${HOME}/.zshrc
 vim:
 	ln -fs $(DOTFILES)/_vimrc ${HOME}/.vimrc
+pry:
+	ln -fs $(DOTFILES)/_pryrc ${HOME}/.pryrc
 tmux:
 	ln -fs $(DOTFILES)/_tmux.conf ${HOME}/.tmux.conf
 alias:
@@ -24,13 +26,13 @@ git:
 	ln -fs $(DOTFILES)/_gitconfig ${HOME}/.gitconfig
 	ln -fs $(DOTFILES)/_gitconfig_shared ${HOME}/.gitconfig_shared
 	ln -fs $(DOTFILES)/_gitconfig_home ${HOME}/.gitconfig_home
-	ln -fs $(DOTFILES)/_gitconfig_work ${HOME}/.gitconfig_work
 	ln -fs $(DOTFILES)/_gitignore ${HOME}/.gitignore
 	ln -fs $(DOTFILES)/_git_template ${HOME}/.git_template
 backup:
 	if [ -z "${HOME}/.tmux.conf" ] ; then mv ${HOME}/.zshrc mv ${HOME}/.zshrc_old ; fi
 	if [ -z "${HOME}/.vimrc" ] ; then mv ${HOME}/.vimrc mv ${HOME}/.vimrc_old ; fi
 	if [ -z "${HOME}/.zshrc" ] ; then mv ${HOME}/.zshrc mv ${HOME}/.zshrc_old ; fi
+	if [ -z "${HOME}/.pryrc" ] ; then mv ${HOME}/.pryrc mv ${HOME}/.pryrc_old ; fi
 	if [ -z "${HOME}/.gitconfig" ] ; then mv ${HOME}/.gitconfig mv ${HOME}/.gitconfig_old ; fi
 	if [ -z "${HOME}/.gitignore" ] ; then mv ${HOME}/.gitconfig mv ${HOME}/.gitignore_old ; fi
 	if [ -z "${HOME}/.git_template" ] ; then mv ${HOME}/.git_template mv ${HOME}/.git_template_old ; fi
