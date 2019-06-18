@@ -2,5 +2,9 @@
 	path = .gitconfig_shared
 [includeIf "gitdir:~/Code/"]
 	path = ~/.gitconfig_home
-[includeIf "gitdir:~/.dotfiles/.git"]
+[includeIf "gitdir:~/.dotfiles/"]
 	path = ~/.gitconfig_home
+[includeIf "gitdir:~/development/repos/"]
+	path = ~/.gitconfig_work
+[core]
+	trustctime = false
