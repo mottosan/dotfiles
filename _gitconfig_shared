@@ -4,6 +4,9 @@
 [fetch]
 	prune = true
 
+[push]
+	default = current
+
 [user]
 	name = "Amortya Ray"
 
