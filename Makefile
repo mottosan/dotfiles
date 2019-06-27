@@ -19,7 +19,8 @@ vim:
 pry:
 	ln -fs $(DOTFILES)/_pryrc ${HOME}/.pryrc
 tmux:
-	ln -fs $(DOTFILES)/_tmux.conf ${HOME}/.tmux.conf
+	ln -fs $(DOTFILES)/_tmux ${HOME}/.tmux
+	ln -fs $(DOTFILES)/_tmux/tmux.conf ${HOME}/.tmux.conf
 alias:
 	ln -fs $(DOTFILES)/_aliases ${HOME}/.aliases
 git:
