@@ -163,7 +163,7 @@ let g:airline_theme = "papercolor"
 
 " fzf stuff {{{
 nnoremap <C-P> :<C-U>FuzzySilver<CR>
-command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
+command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --hidden --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
 let g:fzf_command_prefix = 'Fzf'
 
 " Default fzf layout
