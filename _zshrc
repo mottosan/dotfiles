@@ -92,8 +92,9 @@ alias gclean="git branch --merged master | grep -v '\* master' | xargs -n 1 git 
 alias be="bundle exec"
 
 bindkey -e
-bindkey '^[[1;9C' forward-word
-bindkey '^[[1;9D' backward-word
+bindkey "\e\e[D" backward-word
+bindkey "\e\e[C" forward-word
+bindkey "^X\\x7f" backward-kill-line
 
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -113,3 +114,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+export YVM_DIR=/Users/amortyaray/.yvm
+[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

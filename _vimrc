@@ -33,6 +33,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'dstein64/vim-win'
 call plug#end()
 " }}}
 
@@ -229,7 +230,7 @@ highlight ColorColumn ctermbg=gray
 set colorcolumn=80
 
 " other misc stuff
-set tags=./tags;
+set tags=tags,./tags;
 set splitbelow " cursor moves to new split window
 set splitright " cursor moves to new split window
 map <C-c> :BD<cr> " delete buffer without closing split
