@@ -8,3 +8,5 @@
 	path = ~/.gitconfig_work
 [core]
 	trustctime = false
+[pager]
+	branch = false

@@ -6,29 +6,23 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'janko-m/vim-test'
 Plug 'scrooloose/syntastic'
 Plug 'simnalamburt/vim-mundo'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rails'
 Plug 'croaky/vim-colors-github'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
 Plug 'simnalamburt/vim-mundo'
-Plug 'isRuslan/vim-es6'
-Plug 'kchmck/vim-coffee-script'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-rhubarb'
-Plug 'godlygeek/Tabular'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'posva/vim-vue'
-Plug 'AndrewRadev/splitjoin.vim'
+Plug 'godlygeek/Tabular'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -74,6 +68,7 @@ set hlsearch            " highlight all matches
 
 " Folding {{{
 "=== folding ===
+"
 set foldmethod=indent   " fold based on indent level
 set foldnestmax=10      " max 10 depth
 set foldenable          " don't fold files by default on open
@@ -91,19 +86,15 @@ nnoremap gV `[v`]
 let mapleader=" "
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
 nnoremap <leader>h :A<CR>
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>et :exec ":vsp /Users/dblack/notes/vim/" . strftime('%m-%d-%y') . ".md"<CR>
+nnoremap<leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+noremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>l :call ToggleNumber()<CR>
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>s :mksession<CR>
-nnoremap <leader>a :Ag 
+nnoremap <leader>a :Ack 
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>1 :set number!<CR>
-nnoremap <leader>d :Make! 
-nnoremap <leader>r :TestFile<CR>
-nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y "+y
 noremap <leader>/ :Commentary<cr>
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -117,30 +108,25 @@ let g:syntastic_python_python_exec = 'python3'
 
 " AutoGroups {{{
 augroup configgroup
-    autocmd!
-    autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.rb :call <SID>StripTrailingWhitespaces()
-    autocmd BufEnter *.cls setlocal filetype=java
-    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
-    autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufEnter *.sh setlocal tabstop=2
-    autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufEnter *.sh setlocal softtabstop=2
-    autocmd BufEnter *.py setlocal tabstop=4
-    autocmd BufEnter *.md setlocal ft=markdown
-    autocmd BufEnter *.js setlocal tabstop=2 shiftwidth=2
-    autocmd BufEnter *.erb setlocal tabstop=2 shiftwidth=2
-    autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
-    autocmd FileType ruby setlocal commentstring=#\ %s
-    autocmd Filetype html setlocal ts=2 sw=2 expandtab
-    autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-    autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 noexpandtab
+  autocmd!
+  autocmd VimEnter * highlight clear SignColumn
+  autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.rb :call <SID>StripTrailingWhitespaces()
+  autocmd BufEnter *.cls setlocal filetype=java
+  autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+  autocmd BufEnter Makefile setlocal noexpandtab
+  autocmd BufEnter *.sh setlocal tabstop=2
+  autocmd BufEnter *.sh setlocal shiftwidth=2
+  autocmd BufEnter *.sh setlocal softtabstop=2
+  autocmd BufEnter *.py setlocal tabstop=4
+  autocmd BufEnter *.md setlocal ft=markdown
+  autocmd BufEnter *.js setlocal tabstop=2 shiftwidth=2
+  autocmd BufEnter *.erb setlocal tabstop=2 shiftwidth=2
+  autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
+  autocmd FileType ruby setlocal commentstring=#\ %s
+  autocmd Filetype html setlocal ts=2 sw=2 expandtab
+  autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+  autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 noexpandtab
 augroup END
-" }}}
-
-" Testing {{{
-let test#strategy = 'neovim'
-let test#python#runner = 'nose'
 " }}}
 
 " Backups {{{
@@ -153,24 +139,42 @@ set writebackup
 
 " airline {{{
 set laststatus=2
-let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
 let g:airline_powerline_fonts = 1
+let g:airline_symbols = {}
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
+
 set t_Co=256
 let g:airline_theme = "papercolor"
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 " }}}
 
 " fzf stuff {{{
 nnoremap <C-P> :<C-U>FuzzySilver<CR>
-command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --hidden --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
+command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --hidden --files-with-matches -g "" --ignore "\.git$"' }, <bang>0))
 let g:fzf_command_prefix = 'Fzf'
+let g:fzf_preview_window = 'right:60%'
 
 " Default fzf layout
 " - down / up / left / right
 let g:fzf_layout = { 'down': '~40%' }
-
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -184,7 +188,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
 " }}}
 
 " Custom Functions {{{
@@ -223,8 +226,6 @@ endfunction
 " }}}
 "
 
-" vim:foldmethod=marker:foldlevel=0
-
 " long line warning
 highlight ColorColumn ctermbg=gray
 set colorcolumn=80
@@ -239,7 +240,7 @@ nnoremap <leader>s :new<CR>
 nnoremap <TAB>   :bnext<CR>
 nnoremap <S-TAB> :bprev<CR>
 
-nnoremap <Leader>u :MundoToggle<CR>
+nnoremap <leader>u :MundoToggle<CR>
 
 " when in tmux don't use unnamed clipboard
 if $TMUX == ''
