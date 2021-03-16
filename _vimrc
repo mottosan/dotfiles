@@ -29,6 +29,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'dstein64/vim-win'
+Plug 'Chiel92/vim-autoformat'
 call plug#end()
 " }}}
 
