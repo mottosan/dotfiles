@@ -30,6 +30,7 @@ Plug 'mxw/vim-jsx'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'dstein64/vim-win'
 Plug 'Chiel92/vim-autoformat'
+Plug 'ruanyl/vim-gh-line'
 call plug#end()
 " }}}
 
@@ -255,7 +256,17 @@ if executable('ag')
 endif
 
 " Nerdtree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFocus<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " vim-jsx
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
+set shiftwidth=2
+set autoindent
+set smartindent
+
+let g:gh_line_map = '<leader>gh'
+let g:gh_line_blame_map = '<leader>gb'
