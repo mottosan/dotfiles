@@ -56,7 +56,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(rails ruby git)
+plugins=(rails ruby git virtualenv)
 
 # User configuration
 
@@ -144,10 +144,9 @@ nvm() {
 export PATH=$PATH:$HOME/bin
 
 # added by setup_fb4a.sh
-export ANDROID_SDK=/opt/android_sdk
-export ANDROID_NDK_REPOSITORY=/opt/android_ndk
-export ANDROID_HOME=${ANDROID_SDK}
-export PATH=${PATH}:${ANDROID_SDK}/emulator:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools
+# export ANDROID_SDK=/Users/amortya/Library/Android/sdk
+# export ANDROID_HOME=${ANDROID_SDK}
+# export PATH=${PATH}:${ANDROID_SDK}/emulator:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools:/opt/facebook/bin/:/opt/facebook/hg/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/facebook/bin:/opt/facebook/bin/biggrep:/opt/facebook/ops/scripts/chef:/opt/homebrew/bin:/usr/local/munki:/opt/facebook/hg/bin
 
 # Show the current bookmark or branch
 if [ -f /opt/facebook/hg/share/scm-prompt ]; then
@@ -157,3 +156,10 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# added by setup_fb4a.sh
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+export ANDROID_HOME=${ANDROID_SDK}
+# export PATH=${PATH}:${ANDROID_SDK}/emulator:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools
+export PATH=${PATH}:${ANDROID_SDK}/emulator:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools:/opt/facebook/bin/:/opt/facebook/hg/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/facebook/bin:/opt/facebook/bin/biggrep:/opt/facebook/ops/scripts/chef:/opt/homebrew/bin:/usr/local/munki:/opt/facebook/hg/bin
