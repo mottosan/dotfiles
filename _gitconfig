@@ -4,8 +4,6 @@
 	path = ~/.gitconfig_home
 [includeIf "gitdir:~/.dotfiles/"]
 	path = ~/.gitconfig_home
-[includeIf "gitdir:~/development/repos/"]
-	path = ~/.gitconfig_work
 [core]
 	trustctime = false
 	hooksPath = /Users/amortyaray/.dotfiles/_git_template/hooks
