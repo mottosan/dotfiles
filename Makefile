@@ -18,10 +18,8 @@ vim:
 pry:
 	ln -fs $(DOTFILES)/_pryrc ${HOME}/.pryrc
 tmux:
-	mkdir -p ~/.config/tmux && cd ~/.config/tmux
+	mkdir -p ~/.config
 	curl -fsSL "https://github.com/gpakosz/.tmux/raw/refs/heads/master/install.sh#$(date +%s)" | bash
-	ln -fs $(DOTFILES)/_tmux ${HOME}/.tmux
-	ln -fs $(DOTFILES)/_tmux/tmux.conf ${HOME}/.tmux.conf
 alias:
 	ln -fs $(DOTFILES)/_aliases ${HOME}/.aliases
 git:
