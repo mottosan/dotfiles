@@ -11,7 +11,6 @@ zsh:
 	brew install zsh
 silversearcher: 
 	brew install the_silver_searcher
-
 shell:
 	ln -fs $(DOTFILES)/_zshrc ${HOME}/.zshrc
 vim:
@@ -19,6 +18,8 @@ vim:
 pry:
 	ln -fs $(DOTFILES)/_pryrc ${HOME}/.pryrc
 tmux:
+	mkdir -p ~/.config/tmux && cd ~/.config/tmux
+	curl -fsSL "https://github.com/gpakosz/.tmux/raw/refs/heads/master/install.sh#$(date +%s)" | bash
 	ln -fs $(DOTFILES)/_tmux ${HOME}/.tmux
 	ln -fs $(DOTFILES)/_tmux/tmux.conf ${HOME}/.tmux.conf
 alias:
